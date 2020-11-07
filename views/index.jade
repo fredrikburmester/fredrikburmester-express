@@ -3,3 +3,16 @@ extends layout
 block content
   h1= album
   p Welcome to #{album}
+  -
+    var images = [
+      {
+        'link': '/images/favicon/android-chrome-192x192.png'
+      },
+      {
+        'link': '/images/favicon/android-chrome-512x512.png'
+      }
+    ]
+  
+  for value, key in images
+    img(src=value['link'], alt="")
+
