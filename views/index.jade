@@ -1,18 +1,8 @@
 extends layout
 
 block content
-  h1= album
-  p Welcome to #{album}
-  -
-    var images = [
-      {
-        'link': '/images/favicon/android-chrome-192x192.png'
-      },
-      {
-        'link': '/images/favicon/android-chrome-512x512.png'
-      }
-    ]
+  h1= title
+  p Welcome to #{title}
   
-  for value, key in images
-    img(src=value['link'], alt="")
-
+  each value in images
+    img(src='https://fredrikburmester.com/static/images/' + title + '/' + value['filename'], alt="")
