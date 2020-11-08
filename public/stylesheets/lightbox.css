@@ -1,0 +1,84 @@
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    visibility: hidden;
+    z-index: 9998
+}
+.lightbox-bg {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.8;
+}
+.lightbox .swipe {
+    overflow: hidden;
+    position: relative;
+    visibility:hidden;
+}
+
+.lightbox .swipe-wrap {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+}
+
+.lightbox .swipe-wrap div {
+    float: left;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    /* object-fit: contain; */
+}
+.lightbox .swipe-wrap img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+}
+.lightbox .gallery-image {
+    width: 20vw;
+}
+.lightbox .closeBtn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    height: 16px;
+    width: 19px;
+    padding: 20px;
+    transition: all 200ms;
+    z-index: 9999;
+}
+
+.lightbox .closeBtn:hover {
+    transform: scale(1.2);
+    transition: all 200ms;
+}
+
+.lightbox .line{
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    margin-bottom: 0 !important;
+}
+.lightbox .line#lightbox-line1 {
+    transform: translateY(7px) rotate(45deg) ;
+}
+.lightbox .line#lightbox-line2 {
+    transform: translateY(5px) rotate(-45deg) ;
+}
+
+.no-scroll {
+    overflow-y: hidden;
+}
+.hide-lightbox {
+  display:none;
+}
