@@ -3,7 +3,7 @@ extends layout
 block content
   nav#navbar
   
-  .fullscreen#fullscreen
+  .fullscreen#fullscreen(onclick="toggleMenu()")
 
   .hamburger(onclick="toggleMenu()")
     .line#line1
@@ -12,15 +12,24 @@ block content
 
   .logos
     a(href="https://www.facebook.com/alltidifokus/")
-      img(class="logo" src="/images/social-media-images/fb.png", alt="facebook")
+      img(
+        class="logo",
+        src="/images/social-media-images/fb.png",
+        alt="facebook")
     a(href="https://www.instagram.com/fredrikburmester")
-      img(class="logo" src="/images/social-media-images/ig.png", alt="instagram")
+      img(
+        class="logo",
+        src="/images/social-media-images/ig.png", 
+        alt="instagram")
 
   .menu#menu
     ul(class="menu-links")
-      each link in links
+      each album, index in albums
         li 
-          a(href=`/${link}` class="menu-link")= link
+          if index < 3
+           a(href=`/${album['link']}` class="menu-link large")= album['menu-link']
+          else 
+           a(href=`/${album['link']}` class="menu-link")= album['menu-link']
 
   .container
     .information
@@ -32,10 +41,23 @@ block content
     .gallery
         each image, index in images
           .gallery-image-container(class=`${image['display']}`)
-            img(src='https://fredrikburmester.com/static/images/' + link + '/' + image['filename'], 
-                alt="",
-                class="gallery-image"
-                onclick=`openLightbox(${index})`
-            )
+            if index < 4
+              img(
+                    data-src='https://fredrikburmester.com/static/images/' + link + '/' + image['filename'], 
+                    class="gallery-image",
+                    onclick=`openLightbox(${index})`,
+                    data-visible=1,
+                    style="opacity:0",
+                    alt=""
+              )
+            else 
+              img(
+                  data-src='https://fredrikburmester.com/static/images/' + link + '/' + image['filename'], 
+                  class="gallery-image",
+                  onclick=`openLightbox(${index})`,
+                  data-visible=0,
+                  style="opacity:0",
+                  alt=""
+              )
     
     .lightbox#lightbox
