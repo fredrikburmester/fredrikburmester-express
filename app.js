@@ -1,5 +1,4 @@
 var cookieParser = require('cookie-parser');
-var compression = require('compression')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var createError = require('http-errors');
@@ -12,18 +11,12 @@ const helmet = require("helmet");
 
 require('dotenv').config()
 
-// app.use(helmet());
-app.use(compression({ filter: shouldCompress }))
- 
-function shouldCompress (req, res) {
-  if (req.headers['x-no-compression']) {
-    return false
-  }
-  return compression.filter(req, res)
+if(process.env.END == 'production') {
+  app.use(helmet());
+  
+  let hidePoweredBy = require('hide-powered-by'); 
+  app.use(hidePoweredBy());
 }
-
-let hidePoweredBy = require('hide-powered-by'); 
-app.use(hidePoweredBy());
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

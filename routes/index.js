@@ -4,8 +4,6 @@ var fetch = require("node-fetch");
 
 var jsonObj;
 
-
-
 fetch("https://fredrikburmester.com/static/json/photos.json")
   .then( (response) => response.json())
   .then((data)=> {jsonObj = data}) // output will be the required data
