@@ -5,7 +5,9 @@ block content
   .info
     h1= title
     p= description
+    P Hej
   
   .gallery
     each value in images
-      img(src='https://fredrikburmester.com/static/images/' + link + '/' + value['filename'], alt="")
+      .gallery-image
+        img(src='https://fredrikburmester.com/static/images/' + link + '/' + value['filename'], alt="")
