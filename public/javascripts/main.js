@@ -1,33 +1,28 @@
 function setActiveMenu() {
-    var els = document.getElementsByClassName('menu-link')
-    Array.from(els).forEach(el => {
-        var obj = window.location.href.split('/')
-        obj.forEach(els => {
-            if(slugify(el.innerHTML) == els) {
-                el.style.borderBottom = "#fdbb18";
-                el.style.borderBottomStyle = "solid";
-            }
-        });
+    var menuLinks = document.getElementsByClassName('menu-link')
+    Array.from(menuLinks).forEach(link => {
+        var url = window.location.href.split('/').pop()
+        url = url.split(' ')[0]
+        if(slugify(link.href.split('/').pop()) == url) {
+            link.style.borderBottom = "#fdbb18";
+            link.style.borderBottomStyle = "solid";
+        }
     });
 }
+
+setActiveMenu()
 
 function slugify(string) {
     string = string.replace('ö','%C3%B6')
     return string
 }
 
-setActiveMenu()
+var galleryImages = document.getElementsByClassName('gallery-image');
 
-var els = document.getElementsByClassName('gallery-image');
-Array.from(els).forEach(img => {
+Array.from(galleryImages).forEach(img => {
     if (img.getAttribute("data-visible") == 1) {
         img.setAttribute("src", img.getAttribute("data-src"))
         img.onload = function () {
-            if((this.height / this.width) < 1) img.parentElement.classList.add('wide'); else img.parentElement.classList.add('tall')
-            var getUrl = window.location;
-            if(this.src == getUrl.origin + "/static/images/Home/thumbs/1.jpg" || this.src == getUrl.origin + "/static/images/Home/thumbs/2.jpg") {
-                img.parentElement.classList.add('wide')
-            }
             img.style.opacity = '1'
         };
     }
@@ -46,13 +41,13 @@ function lazyLoading() {
                 image.setAttribute("data-visible", 1)
                 image.setAttribute("src", image.getAttribute("data-src"))
                 image.onload = function () {
-                    if((this.height / this.width) < 1) image.parentElement.classList.add('wide')
+                    // if((this.height / this.width) < 1) image.parentElement.classList.add('wide')
                     image.style.opacity = '1'
                 };
             }
         }
     });
-};
+}
 
 window.onscroll = function () {
     lazyLoading()
@@ -107,10 +102,3 @@ function navbarShadow() {
         document.getElementById("navbar").classList.remove("navbar-shadow");
     }
 }
-
-var zoomed = 0;
-var open = 0;
-var images = "[{&#x27;index&#x27;: &#x27;002&#x27;, &#x27;src&#x27;: &#x27;images/Home/2.jpg&#x27;, &#x27;thumb&#x27;: &#x27;images/Home/thumbs/2.jpg&#x27;}, {&#x27;index&#x27;: &#x27;001&#x27;, &#x27;src&#x27;: &#x27;images/Home/1.jpg&#x27;, &#x27;thumb&#x27;: &#x27;images/Home/thumbs/1.jpg&#x27;}]"
-images = images.replace(/&#x27;/g,'\"');
-var obj = JSON.parse(images)
-var currentLightBoxImage = 0;

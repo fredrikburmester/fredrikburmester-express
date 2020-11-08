@@ -27,10 +27,11 @@ var e32 = document.createElement("div");
 e32.classList.add("swipe-wrap")
 e32.id = "slider-wrap"
 
-obj.forEach(image => {
+images = document.getElementsByClassName('gallery-image');
+Array.from(images).forEach(image => {
     var div = document.createElement("div");
     var img = document.createElement("img");
-    img.setAttribute('data-src', '/static/' + image.src)
+    img.setAttribute('data-src', image.getAttribute('data-src'))
     img.classList.add("lightbox-image")
     img.alt = ""
     div.appendChild(img)
@@ -53,10 +54,6 @@ function closeLightbox() {
     document.getElementById('lightbox').classList.add("hide-lightbox")
     document.getElementById('lightbox-bg').classList.add("hide-lightbox")
     document.getElementById('slider').classList.add("hide-lightbox")
-
-
-
-    // document.getElementById('lightbox').style.opacity = '0'
 
     Array.from(images).forEach(image => {
         image.src = ""

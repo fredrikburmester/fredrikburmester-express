@@ -3,34 +3,61 @@ extends layout
 block content
   nav#navbar
   
-  .fullscreen#fullscreen
+  .fullscreen#fullscreen(onclick="toggleMenu()")
 
-  .hamburger
+  .hamburger(onclick="toggleMenu()")
     .line#line1
     .line#line2
     .line#line3
 
   .logos
     a(href="https://www.facebook.com/alltidifokus/")
-      img(class="logo" src="/images/social-media-images/fb.png", alt="facebook")
+      img(
+        class="logo",
+        src="/images/social-media-images/fb.png",
+        alt="facebook")
     a(href="https://www.instagram.com/fredrikburmester")
-      img(class="logo" src="/images/social-media-images/ig.png", alt="instagram")
+      img(
+        class="logo",
+        src="/images/social-media-images/ig.png", 
+        alt="instagram")
 
   .menu#menu
-    .menu-links
+    ul(class="menu-links")
+      each album, index in albums
+        li 
+          if index < 3
+           a(href=`/${album['link']}` class="menu-link large")= album['menu-link']
+          else 
+           a(href=`/${album['link']}` class="menu-link")= album['menu-link']
 
   .container
     .information
-      a(href="/" id="title") FB
+      a(href="/", id="title") FB
       h1(id="subtitle") photographer
       h1(id="album-name")= title 
       p(id="description")= description
     
     .gallery
-      each value in images
-        .gallery-image
-          .gallery-image-container
-            .gallery-image
-              img(src='https://fredrikburmester.com/static/images/' + link + '/' + value['filename'], alt="")
+        each image, index in images
+          .gallery-image-container(class=`${image['display']}`)
+            if index < 4
+              img(
+                    data-src='https://fredrikburmester.com/static/images/' + link + '/' + image['filename'], 
+                    class="gallery-image",
+                    onclick=`openLightbox(${index})`,
+                    data-visible=1,
+                    style="opacity:0",
+                    alt=""
+              )
+            else 
+              img(
+                  data-src='https://fredrikburmester.com/static/images/' + link + '/' + image['filename'], 
+                  class="gallery-image",
+                  onclick=`openLightbox(${index})`,
+                  data-visible=0,
+                  style="opacity:0",
+                  alt=""
+              )
     
     .lightbox#lightbox
