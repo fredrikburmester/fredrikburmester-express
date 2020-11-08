@@ -2,25 +2,49 @@ var express = require('express');
 var router = express.Router();
 var fetch = require("node-fetch");
 
-var jsonObj;
+var images;
+var albums;
 
 fetch("https://fredrikburmester.com/static/json/photos.json")
   .then( (response) => response.json())
-  .then((data)=> {jsonObj = data}) // output will be the required data
+  .then((data)=> {images = data}) // output will be the required data
   .catch( (error) => console.log(error))
+
+fetch("https://fredrikburmester.com/static/json/albums.json")
+.then( (response) => response.json())
+.then((data)=> {albums = data}) // output will be the required data
+.catch( (error) => console.log(error))
 
 router.get('/', function(req, res, next) {
   res.redirect('/Home'); 
 });
 
 router.get('/:name(Home|Landscapes)?', function(req, res, next) {
-  var images = [];
-  jsonObj.forEach(image => {
-    if(image['album'] == req.params.name) {
-      images.push(image)
+  var albumImages = [];
+  var title = req.params.name;
+  var link = title;
+  var currentAlbum; 
+
+  // Get album specifics
+  albums.forEach(album => {
+    console.log(album['link'])
+    if(album['link'] == link) {
+      currentAlbum = album;
+    } 
+  });
+  
+  // Get all images for specific album
+  images.forEach(image => {
+    if(image['album'] == link) {
+      albumImages.push(image)
     }
   });
-  res.render('index', { title: req.params.name, images: images});
+
+  res.render('index', { 
+    link: currentAlbum.link, 
+    title: currentAlbum.title, 
+    description: currentAlbum.description, 
+    images: albumImages});
 });
 
 module.exports = router;

@@ -1,8 +1,11 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
   
-  each value in images
-    img(src='https://fredrikburmester.com/static/images/' + title + '/' + value['filename'], alt="")
+  .info
+    h1= title
+    p= description
+  
+  .gallery
+    each value in images
+      img(src='https://fredrikburmester.com/static/images/' + link + '/' + value['filename'], alt="")
