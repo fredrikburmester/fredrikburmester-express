@@ -1,15 +1,30 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
 var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-
+var compression = require('compression')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var createError = require('http-errors');
+var express = require('express');
+var logger = require('morgan');
+var path = require('path');
 var app = express();
 
-// view engine setup
+const helmet = require("helmet");
+
+require('dotenv').config()
+
+// app.use(helmet());
+app.use(compression({ filter: shouldCompress }))
+ 
+function shouldCompress (req, res) {
+  if (req.headers['x-no-compression']) {
+    return false
+  }
+  return compression.filter(req, res)
+}
+
+let hidePoweredBy = require('hide-powered-by'); 
+app.use(hidePoweredBy());
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
@@ -31,7 +46,7 @@ app.use(function(req, res, next) {
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  res.locals.error = req.app.get('env') === process.env.ENV ? err : {};
 
   // render the error page
   res.status(err.status || 500);
