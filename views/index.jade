@@ -5,7 +5,7 @@ block content
   
   .fullscreen#fullscreen
 
-  .hamburger
+  .hamburger(onclick="toggleMenu()")
     .line#line1
     .line#line2
     .line#line3
@@ -17,20 +17,25 @@ block content
       img(class="logo" src="/images/social-media-images/ig.png", alt="instagram")
 
   .menu#menu
-    .menu-links
+    ul(class="menu-links")
+      each link in links
+        li 
+          a(href=`/${link}` class="menu-link")= link
 
   .container
     .information
-      a(href="/" id="title") FB
+      a(href="/", id="title") FB
       h1(id="subtitle") photographer
       h1(id="album-name")= title 
       p(id="description")= description
     
     .gallery
-      each value in images
-        .gallery-image
-          .gallery-image-container
-            .gallery-image
-              img(src='https://fredrikburmester.com/static/images/' + link + '/' + value['filename'], alt="")
+        each image, index in images
+          .gallery-image-container(class=`${image['display']}`)
+            img(src='https://fredrikburmester.com/static/images/' + link + '/' + image['filename'], 
+                alt="",
+                class="gallery-image"
+                onclick=`openLightbox(${index})`
+            )
     
     .lightbox#lightbox

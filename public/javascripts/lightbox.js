@@ -54,10 +54,6 @@ function closeLightbox() {
     document.getElementById('lightbox-bg').classList.add("hide-lightbox")
     document.getElementById('slider').classList.add("hide-lightbox")
 
-
-
-    // document.getElementById('lightbox').style.opacity = '0'
-
     Array.from(images).forEach(image => {
         image.src = ""
     });
