@@ -1,8 +1,21 @@
 doctype html
 html
   head
+    base(href="/")
+    meta(name="description", content="My photography website")
+    meta(name="keywords", content="photography fredrik burmester")
+    meta(http-equiv="Content-Type", content="text/html;charset=UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
     title= "Fredrik Burmester | " + title
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel="shortcut icon", href="/images/favicon/favicon-16x16.png", type="image/x-icon")
+    
+    link(rel="stylesheet", href="/stylesheets/lightbox.css")
+    
+    script(src="/javascripts/swipe.min.js")
+    script(src="/javascripts/main.js")
+
   body
     block content
+    script(src="/javascripts/lightbox.js")
