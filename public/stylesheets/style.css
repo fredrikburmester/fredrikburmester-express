@@ -175,7 +175,7 @@ nav {
   grid-gap: 50px;
   align-items: center;
   grid-auto-flow: dense;
-  margin: 2rem 2rem 10rem 0;
+  margin: 2rem 2rem 5rem 0;
 }
 
 .gallery-image-container {
