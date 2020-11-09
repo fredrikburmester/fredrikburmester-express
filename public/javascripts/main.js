@@ -21,7 +21,7 @@ var galleryImages = document.getElementsByClassName('gallery-image');
 
 Array.from(galleryImages).forEach(img => {
     if (img.getAttribute("data-visible") == 1) {
-        img.setAttribute("src", img.getAttribute("data-src"))
+        img.setAttribute("src", img.getAttribute("thumb-src"))
         img.onload = function () {
             img.style.opacity = '1'
         };
@@ -39,7 +39,7 @@ function lazyLoading() {
             isVisible = elemTop < window.innerHeight && elemBottom >= 0
             if (isVisible) {
                 image.setAttribute("data-visible", 1)
-                image.setAttribute("src", image.getAttribute("data-src"))
+                image.setAttribute("src", image.getAttribute("thumb-src"))
                 image.onload = function () {
                     // if((this.height / this.width) < 1) image.parentElement.classList.add('wide')
                     image.style.opacity = '1'

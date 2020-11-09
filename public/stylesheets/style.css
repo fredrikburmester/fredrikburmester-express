@@ -157,7 +157,7 @@ nav {
 
 .container .information {
   position: sticky;
-  top: 25vh;
+  top: 30vh;
   grid-row: span 1;
   display: grid;
   place-items: center;
@@ -297,7 +297,7 @@ img {
       position: relative;
       height: auto;
       margin: 0 0 0 0;
-      padding: 0 1rem 0 1rem;
+      padding: 0 2rem 0 2rem;
       z-index: 0 !important;
   }
 
@@ -317,14 +317,27 @@ img {
   #title {
       margin-top: 2rem;
   }
+
 }
 @media only screen and (max-width: 450px) {
   .menu {
-      width: 100vw;
-      left: -100vw;
+      width: 85vw;
+      left: -85vw;
   }
   .active {
       left: 0;
+  }
+  .container .information {
+    padding: 0 1rem 0 1rem;
+  }
+  .container .gallery {
+    margin: 2rem 1rem 10rem 1rem
+  }
+  .container #subtitle {
+    font-size: 0.8em;
+  }
+  #description {
+    font-size: 1.2em;
   }
 }
 @media only screen and (max-height: 615px) {

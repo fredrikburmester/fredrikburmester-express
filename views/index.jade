@@ -43,15 +43,17 @@ block content
           .gallery-image-container(class=`${image['display']}`)
             if index < 4
               img(
-                    data-src='https://fredrikburmester.com/static/images/' + link + '/' + image['filename'], 
-                    class="gallery-image",
-                    onclick=`openLightbox(${index})`,
-                    data-visible=1,
-                    style="opacity:0",
-                    alt=""
+                  thumb-src='https://fredrikburmester.com/static/images/' + link + '/thumbs/' + image['filename'], 
+                  data-src='https://fredrikburmester.com/static/images/' + link + '/' + image['filename'], 
+                  class="gallery-image",
+                  onclick=`openLightbox(${index})`,
+                  data-visible=1,
+                  style="opacity:0",
+                  alt=""
               )
             else 
               img(
+                  thumb-src='https://fredrikburmester.com/static/images/' + link + '/thumbs/' + image['filename'], 
                   data-src='https://fredrikburmester.com/static/images/' + link + '/' + image['filename'], 
                   class="gallery-image",
                   onclick=`openLightbox(${index})`,
@@ -60,4 +62,4 @@ block content
                   alt=""
               )
     
-    .lightbox#lightbox
+  .lightbox#lightbox
