@@ -5,7 +5,7 @@
 
 ## Info
 
-This website was built with NPM and [Express](https://expressjs.com/) in the backend with PUG in the frontend. This website is hosted on my own local server with Nginx as the webproxy, which is also serving all static files. 
+This website was built with [Node](https://nodejs.org/en/) and [Express](https://expressjs.com/) in the backend, with [Pug](https://pugjs.org/api/getting-started.html) in the frontend. This website is hosted on my own local server with Nginx as the webproxy, which is also serving all static files. 
 
 ## Release History
 
