@@ -1,4 +1,4 @@
-# fredrikburmester-django
+# fredrikburmester-express
 > My own personal photography website build with Express and PUG.
 
 [fredrikburmester.com](https://fredrikburmester.com)
