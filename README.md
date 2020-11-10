@@ -9,7 +9,7 @@ This website was built with [Node](https://nodejs.org/en/) and [Express](https:/
 #### :snail: Lazy-loading
 This websites supports lazy-loading in all modern browsers, both in the gallery **and** in the Lightbox. This drastically reduces network load since some galleries contain more than 200 images. 
 
-#### :black_square_button: Lightbox
+#### :rocket: Lightbox
 The Lightbox lazy-loads one image in advance and support left-right swiping on mobile and desktop. 
 
 #### :globe_with_meridians: Hosting
