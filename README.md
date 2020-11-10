@@ -1,7 +1,7 @@
 # fredrikburmester-express
 > My own personal photography website build with Express and Pug.
 
-[dev.fredrikburmester.com](https://dev.fredrikburmester.com)
+[fredrikburmester.com](https://fredrikburmester.com)
 
 ## Info
 
