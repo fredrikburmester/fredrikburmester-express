@@ -7,6 +7,10 @@
 
 This website was built with [Node](https://nodejs.org/en/) and [Express](https://expressjs.com/) in the backend, with [Pug](https://github.com/pugjs/pug) in the frontend. This website is hosted on my own local server with Nginx as the webproxy, which is also serving all static files. 
 
+## To-do
+
+- Handle trailing slash in url for menu highlighting.
+
 ## Contributing
 
 1. Fork it (<https://github.com/fredrikburmester/fredrikburmester-express/fork>)
