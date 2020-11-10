@@ -12,6 +12,7 @@ This website auto-updates from the github master every 15 minutes with a cronjob
 ## To-do
 
 - Handle trailing slash in url for menu highlighting.
+- Disable vertical scrolling when the lightbox is open. 
 
 ## Contributing
 
