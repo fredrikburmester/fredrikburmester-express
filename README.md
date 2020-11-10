@@ -6,7 +6,7 @@
 ## Info
 This website was built with [Node](https://nodejs.org/en/) and [Express](https://expressjs.com/) in the backend, with [Pug](https://github.com/pugjs/pug) in the frontend. 
 
-#### Lazy-loading
+#### :snail: Lazy-loading
 This websites supports lazy-loading in all modern browsers, both in the gallery **and** in the Lightbox. This drastically reduces network load since some galleries contain more than 200 images. 
 
 #### Lightbox
