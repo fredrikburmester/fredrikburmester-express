@@ -11,7 +11,7 @@ const helmet = require("helmet");
 
 require('dotenv').config()
 
-if(process.env.END == 'production') {
+if(process.env.ENV == 'production') {
   app.use(helmet());
   
   let hidePoweredBy = require('hide-powered-by'); 

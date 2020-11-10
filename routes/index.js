@@ -31,15 +31,17 @@ router.get('/:name', function(req, res, next) {
   var title = req.params.name;
   var link = title;
   var currentAlbum; 
+  var found = false
 
   // Get album specifics
   albums.forEach(album => {
     if(album['link'] == link) {
       currentAlbum = album;
-    } else {
-      // redirect
-    }
+      found = true
+    } 
   });
+
+  if(!found) res.redirect("/")
 
   // Get all images for specific album
   images.forEach(image => {
