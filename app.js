@@ -11,12 +11,10 @@ const helmet = require("helmet");
 
 require('dotenv').config()
 
-//if(process.env.ENV == 'production') {
-//  app.use(helmet());
-//  
-//  let hidePoweredBy = require('hide-powered-by'); 
-//  app.use(hidePoweredBy());
-//}
+if(process.env.ENV == 'production') {
+  let hidePoweredBy = require('hide-powered-by'); 
+  app.use(hidePoweredBy());
+}
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
