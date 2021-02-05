@@ -25,6 +25,24 @@ This website auto download updates from the github master every 15 minutes with 
 - Handle trailing slash in url for menu highlighting.
 - Disable vertical scrolling when the lightbox is open. 
 
+## How-to
+If you want to use this gallery type website for your own pictures here's how to install it!
+1. Clone the rep `git clone https://github.com/fredrikburmester/fredrikburmester-express.git`
+2. Create two json files. One for images and one for menu links (albums).
+  - The albums json file will have the following structure:
+  ```
+  [{
+  link	"Home"
+  title	"My name is Fredrik Burmester"
+  menu-link	"Home"
+  description	""
+  }]
+  ```
+  - The photos json file can be created with my pyton script link
+3. Change all relevant code:
+  - Links and titles in `index.jade`, `layout.jade` and `ìndex.js`.
+4. Create a 
+
 ## Contributing
 1. Fork it (<https://github.com/fredrikburmester/fredrikburmester-express/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
