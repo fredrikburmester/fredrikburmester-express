@@ -29,18 +29,18 @@ This website auto download updates from the github master every 15 minutes with 
 If you want to use this gallery type website for your own pictures here's how to install it!
 1. Clone the rep `git clone https://github.com/fredrikburmester/fredrikburmester-express.git`
 2. Create two json files. One for images and one for menu links (albums).
-  - The albums json file will have the following structure:
-  ```
-  [{
-  link	"Home"
-  title	"My name is Fredrik Burmester"
-  menu-link	"Home"
-  description	""
-  }]
-  ```
-  - The photos json file can be created with my pyton script: [Photos to JSON](https://github.com/fredrikburmester/photos-to-json)
+    - The albums json file will have the following structure:
+    ```
+    [{
+    link	"Home"
+    title	"My name is Fredrik Burmester"
+    menu-link	"Home"
+    description	""
+    }]
+    ```
+    - The photos json file can be created with my pyton script: [Photos to JSON](https://github.com/fredrikburmester/photos-to-json)
 3. Change all relevant code:
-  - Links and titles in `index.jade`, `layout.jade` and `ìndex.js`.
+    - Links and titles in `index.jade`, `layout.jade` and `ìndex.js`.
 
 ## Contributing
 1. Fork it (<https://github.com/fredrikburmester/fredrikburmester-express/fork>)
