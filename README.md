@@ -41,7 +41,6 @@ If you want to use this gallery type website for your own pictures here's how to
   - The photos json file can be created with my pyton script: [Photos to JSON](https://github.com/fredrikburmester/photos-to-json)
 3. Change all relevant code:
   - Links and titles in `index.jade`, `layout.jade` and `ìndex.js`.
-4. Create a 
 
 ## Contributing
 1. Fork it (<https://github.com/fredrikburmester/fredrikburmester-express/fork>)
