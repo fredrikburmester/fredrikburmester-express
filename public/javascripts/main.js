@@ -1,3 +1,5 @@
+console.log(":)");
+
 function setActiveMenu() {
     var menuLinks = document.getElementsByClassName('menu-link')
     Array.from(menuLinks).forEach(link => {
