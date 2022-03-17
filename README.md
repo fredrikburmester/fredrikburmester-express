@@ -6,7 +6,7 @@ Link: [portfolio.fredrikburmester.com](https://portfolio.fredrikburmester.com)
 ## Info
 This website was built with [Node](https://nodejs.org/en/) and [Express](https://expressjs.com/) in the backend, with [Pug](https://github.com/pugjs/pug) in the frontend. 
 
-This being a photography websites demands a good lazy-loading system, so this was really important to me. That's why a implemented lazy-loading and loading higher quality images when the ligthbox is opened. 
+This being a photography websites demands a good lazy-loading system, so this was really important to me. That's why I implemented lazy-loading and loading higher quality images when the ligthbox is opened. 
 
 The website requires only 171 kB to be transferred to your device! And everything after that lazyloads.
 
