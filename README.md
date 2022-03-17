@@ -1,7 +1,7 @@
 # fredrikburmester-express
 > My own personal photography website build with Express and Pug.
 
-Link: [fredrik.studio](https://fredrik.studio)
+Link: [https://fredrik.studio](https://fredrik.studio)
 
 ## Info
 This website was built with [Node](https://nodejs.org/en/) and [Express](https://expressjs.com/) in the backend, with [Pug](https://github.com/pugjs/pug) in the frontend. 
