@@ -7,12 +7,12 @@ var albums;
 var links = [];
 var menuLinks = [];
 
-fetch("https://portfolio.fredrikburmester.com/static/json/photos.json")
+fetch("https://fredrik.studio/static/json/photos.json")
 .then( (response) => response.json())
 .then((data)=> {images = data}) // output will be the required data
 .catch( (error) => console.log(error))
 
-fetch("https://portfolio.fredrikburmester.com/static/json/albums.json")
+fetch("https://fredrik.studio/static/json/albums.json")
 .then( (response) => response.json())
 .then((data)=> {
   albums = data
