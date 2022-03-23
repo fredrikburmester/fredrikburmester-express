@@ -1,5 +1,5 @@
 # fredrikburmester-express
-> My own personal photography website build with Express and Pug.
+> My own personal photography website built with Express and Pug.
 
 Link: [https://fredrik.studio](https://fredrik.studio)
 
